@@ -10,6 +10,10 @@ export default class App extends PureComponent {
     selectedVideo: null
   };
 
+  componentDidMount() {
+    this.handleSubmit("tigerbelly");
+  }
+
   handleSubmit = async (term) => {
     const response = await youtube.get("/search", {
       params: {
@@ -17,7 +21,7 @@ export default class App extends PureComponent {
       }
     });
     this.setState({
-      selectedVideo: response.data.items[0],
+      selectedVideo: response.data.items[1],
       videos: response.data.items
     });
   };
