@@ -14,8 +14,7 @@ export default class SearchBar extends PureComponent {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    // TODO: make sure we call
-    // callback from parent component
+    this.props.handleSubmit(this.state.term);
   };
 
   render() {
